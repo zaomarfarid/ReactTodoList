@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <CssBaseline />
+      <h1>Todos</h1>
       <TodoList />
     </>
   )
