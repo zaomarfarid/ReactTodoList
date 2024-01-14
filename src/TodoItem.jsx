@@ -1,10 +1,11 @@
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
+import {
+    ListItem,
+    ListItemButton,
+    ListItemIcon, ListItemText,
+    Checkbox,
+    IconButton
+} from '@mui/material';
+import { RemoveCircleTwoTone } from '@mui/icons-material';
 
 export default function TodoItem({ todo, removeTodo, toggleTodo }) {
     const labelId = `checkbox-list-label-${todo.id}`;
@@ -14,7 +15,7 @@ export default function TodoItem({ todo, removeTodo, toggleTodo }) {
             key={todo.id}
             secondaryAction={
                 <IconButton onClick={removeTodo} edge="end" aria-label="comments">
-                    <CommentIcon />
+                    <RemoveCircleTwoTone />
                 </IconButton>
             }
             disablePadding
