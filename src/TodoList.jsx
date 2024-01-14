@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import List from '@mui/material/List';
+import { Box, List, Typography } from '@mui/material';
 import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
 
@@ -38,16 +38,20 @@ export default function TodoList() {
     }
 
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            {todos.map((todo) => (
-                <TodoItem
-                    todo={todo}
-                    key={todo.id}
-                    removeTodo={() => removeTodo(todo.id)}
-                    toggleTodo={() => toggleTodo(todo.id)}
-                />
-            ))}
-            <TodoForm addTodo={addTodo} />
-        </List >
-    )
+        <Box sx={{ display: 'flex', justifyContent: 'center', m: 3, flexDirection: 'column', alignItems: 'center' }} >
+            <Typography variant="h2" component="h2" sx={{ flexGrow: 1 }}>
+                Todos
+            </Typography>
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                {todos.map((todo) => (
+                    <TodoItem
+                        todo={todo}
+                        key={todo.id}
+                        removeTodo={() => removeTodo(todo.id)}
+                        toggleTodo={() => toggleTodo(todo.id)}
+                    />
+                ))}
+                <TodoForm addTodo={addTodo} />
+            </List >
+        </Box>)
 }
